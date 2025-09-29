@@ -38,7 +38,7 @@ export default function Home() {
         }}
       />
       
-      <div className="absolute inset-0 bg-blue-950/60" />
+      <div className="absolute inset-0 bg-blue-950/75" />
       
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
