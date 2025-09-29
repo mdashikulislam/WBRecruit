@@ -9,11 +9,14 @@ export default function Home() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat backdrop-blur-sm"
+        style={{ 
+          backgroundImage: `url(${backgroundImage})`,
+          filter: 'blur(3px)'
+        }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+      <div className="absolute inset-0 bg-blue-950/60" />
       
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
