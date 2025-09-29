@@ -1,7 +1,7 @@
 import { useState } from "react";
 import backgroundImage from "@assets/sky-background.jpg";
 import logoImage from "@assets/wb-logo.png";
-import { Facebook, Instagram, Twitter, Phone, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Phone, Linkedin, Youtube, Calendar } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -85,9 +85,10 @@ export default function Home() {
           
           <button
             onClick={handleScheduleClick}
-            className="inline-flex items-center justify-center rounded-lg bg-white px-12 py-5 text-lg font-semibold text-cyan-500 shadow-xl transition-all hover:scale-105 hover:shadow-2xl active:scale-100"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
             data-testid="button-schedule"
           >
+            <Calendar className="h-5 w-5" />
             Schedule with Calendly
           </button>
 
