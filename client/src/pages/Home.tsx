@@ -1,9 +1,31 @@
+import { useState } from "react";
 import backgroundImage from "@assets/sky-background.jpg";
 import logoImage from "@assets/wb-logo.png";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 export default function Home() {
+  const [showWarnerDialog, setShowWarnerDialog] = useState(false);
+
   const handleScheduleClick = () => {
     window.open('https://calendly.live', '_blank', 'noopener,noreferrer');
+  };
+
+  const handleLogoClick = () => {
+    setShowWarnerDialog(true);
+  };
+
+  const handleGoToWarnerBros = () => {
+    window.open('https://www.warnerbros.com', '_blank', 'noopener,noreferrer');
+    setShowWarnerDialog(false);
   };
 
   return (
@@ -24,8 +46,9 @@ export default function Home() {
             <img
               src={logoImage}
               alt="Warner Bros Logo"
-              className="mx-auto w-64 drop-shadow-2xl md:w-80"
+              className="mx-auto w-64 cursor-pointer drop-shadow-2xl transition-transform hover:scale-105 md:w-80"
               data-testid="img-logo"
+              onClick={handleLogoClick}
             />
             <h2 
               className="text-4xl font-bold tracking-wide text-white drop-shadow-lg md:text-5xl"
@@ -34,6 +57,23 @@ export default function Home() {
               Warner Bros
             </h2>
           </div>
+
+          <AlertDialog open={showWarnerDialog} onOpenChange={setShowWarnerDialog}>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Visit Warner Bros Official Website</AlertDialogTitle>
+                <AlertDialogDescription>
+                  You are about to be redirected to the official Warner Bros website. Would you like to continue?
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel data-testid="button-discard">Discard</AlertDialogCancel>
+                <AlertDialogAction onClick={handleGoToWarnerBros} data-testid="button-go">
+                  Go
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
           
           <h1 
             className="text-2xl font-semibold tracking-wide text-white drop-shadow-lg md:text-3xl lg:text-4xl"
