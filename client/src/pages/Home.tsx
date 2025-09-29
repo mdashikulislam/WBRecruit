@@ -1,5 +1,5 @@
 import backgroundImage from "@assets/sky-background.jpg";
-import logoImage from "@assets/generated_images/Warner_Bros_logo_shield_8208a3ec.png";
+import logoImage from "@assets/wb-logo.png";
 
 export default function Home() {
   const handleScheduleClick = () => {
