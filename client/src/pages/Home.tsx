@@ -1,6 +1,7 @@
 import { useState } from "react";
 import backgroundImage from "@assets/sky-background.jpg";
 import logoImage from "@assets/wb-logo.png";
+import { Facebook, Instagram, Twitter, Phone, Mail } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -89,6 +90,77 @@ export default function Home() {
           >
             Schedule with Calendly
           </button>
+
+          <div className="mt-16 space-y-6 border-t border-white/20 pt-8">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-12">
+              <div className="flex items-center gap-2 text-white">
+                <Phone className="h-5 w-5" />
+                <a 
+                  href="tel:+18189545000" 
+                  className="text-sm font-medium hover:text-cyan-300 transition-colors md:text-base"
+                  data-testid="link-phone"
+                >
+                  +1 (818) 954-5000
+                </a>
+              </div>
+              
+              <div className="flex items-center gap-2 text-white">
+                <Mail className="h-5 w-5" />
+                <a 
+                  href="mailto:recruiting@warnerbros.com" 
+                  className="text-sm font-medium hover:text-cyan-300 transition-colors md:text-base"
+                  data-testid="link-email"
+                >
+                  recruiting@warnerbros.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-6">
+              <a
+                href="https://www.facebook.com/warnerbros"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+                data-testid="link-facebook"
+                aria-label="Facebook"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+                  <Facebook className="h-6 w-6 text-white" />
+                </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/warnerbros"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+                data-testid="link-instagram"
+                aria-label="Instagram"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+                  <Instagram className="h-6 w-6 text-white" />
+                </div>
+              </a>
+
+              <a
+                href="https://twitter.com/warnerbros"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+                data-testid="link-twitter"
+                aria-label="Twitter"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+                  <Twitter className="h-6 w-6 text-white" />
+                </div>
+              </a>
+            </div>
+
+            <p className="text-xs text-white/60 md:text-sm">
+              © 2025 Warner Bros. Entertainment Inc. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </div>
