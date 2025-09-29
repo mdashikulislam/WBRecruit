@@ -55,7 +55,7 @@ export default function Home() {
               className="text-4xl font-bold tracking-wide text-white drop-shadow-lg md:text-5xl"
               data-testid="text-brand"
             >
-              Warner Bros
+              Warner Bros Hiring
             </h2>
           </div>
 
