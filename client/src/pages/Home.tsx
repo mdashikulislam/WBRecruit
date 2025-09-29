@@ -1,5 +1,9 @@
-import { useState } from "react";
-import backgroundImage from "@assets/sky-background.jpg";
+import { useState, useEffect } from "react";
+import image1 from "@assets/1_1759181092855.jpg";
+import image2 from "@assets/2_1759181092856.jpg";
+import image3 from "@assets/3_1759181092856.jpg";
+import image4 from "@assets/4_1759181092856.jpg";
+import image5 from "@assets/5_1759181092856.jpg";
 import logoImage from "@assets/wb-logo.png";
 import { Facebook, Instagram, Twitter, Phone, Linkedin, Youtube, Calendar } from "lucide-react";
 import {
@@ -15,6 +19,17 @@ import {
 
 export default function Home() {
   const [showWarnerDialog, setShowWarnerDialog] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const backgroundImages = [image1, image2, image3, image4, image5];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
 
   const handleScheduleClick = () => {
     window.open('https://calendly.live', '_blank', 'noopener,noreferrer');
@@ -31,13 +46,17 @@ export default function Home() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat backdrop-blur-sm"
-        style={{ 
-          backgroundImage: `url(${backgroundImage})`,
-          filter: 'blur(3px)'
-        }}
-      />
+      {backgroundImages.map((image, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{ 
+            backgroundImage: `url(${image})`,
+            filter: 'blur(3px)',
+            opacity: currentImageIndex === index ? 1 : 0
+          }}
+        />
+      ))}
       
       <div className="absolute inset-0 bg-blue-950/75" />
       
