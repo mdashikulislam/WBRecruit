@@ -79,7 +79,7 @@ export default function Home() {
             className="text-2xl font-semibold tracking-wide text-white drop-shadow-lg md:text-3xl lg:text-4xl"
             data-testid="text-headline"
           >
-            Schedule a Consultation with Our Recruiting Team
+            Schedule a Consultation with Our Recruiting Agent
           </h1>
           
           <button
