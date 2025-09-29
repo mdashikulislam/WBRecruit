@@ -22,6 +22,13 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const backgroundImages = [image1, image2, image3, image4, image5];
+  const overlayColors = [
+    'bg-red-950/75',
+    'bg-blue-950/75',
+    'bg-green-950/75',
+    'bg-yellow-950/75',
+    'bg-purple-950/75'
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,13 +59,19 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
           style={{ 
             backgroundImage: `url(${image})`,
-            filter: 'blur(3px)',
+            filter: 'blur(5px)',
             opacity: currentImageIndex === index ? 1 : 0
           }}
         />
       ))}
       
-      <div className="absolute inset-0 bg-blue-950/75" />
+      {overlayColors.map((color, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 ${color} transition-opacity duration-1000`}
+          style={{ opacity: currentImageIndex === index ? 1 : 0 }}
+        />
+      ))}
       
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
