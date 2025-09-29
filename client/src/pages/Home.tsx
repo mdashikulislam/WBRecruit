@@ -31,7 +31,7 @@ export default function Home() {
             className="text-5xl font-bold tracking-wide text-white drop-shadow-lg md:text-6xl lg:text-7xl"
             data-testid="text-headline"
           >
-            Recruiting Warner Bros Agents for Recruiting
+            Schedule a call with one recruiting members from Warner Bros
           </h1>
           
           <button
