@@ -20,15 +20,23 @@ export default function Home() {
       
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
-          <img
-            src={logoImage}
-            alt="Warner Bros Logo"
-            className="mx-auto w-64 drop-shadow-2xl md:w-80"
-            data-testid="img-logo"
-          />
+          <div className="space-y-4">
+            <img
+              src={logoImage}
+              alt="Warner Bros Logo"
+              className="mx-auto w-64 drop-shadow-2xl md:w-80"
+              data-testid="img-logo"
+            />
+            <h2 
+              className="text-4xl font-bold tracking-wide text-white drop-shadow-lg md:text-5xl"
+              data-testid="text-brand"
+            >
+              Warner Bros
+            </h2>
+          </div>
           
           <h1 
-            className="text-5xl font-bold tracking-wide text-white drop-shadow-lg md:text-6xl lg:text-7xl"
+            className="text-2xl font-semibold tracking-wide text-white drop-shadow-lg md:text-3xl lg:text-4xl"
             data-testid="text-headline"
           >
             Schedule a call with one recruiting members from Warner Bros
