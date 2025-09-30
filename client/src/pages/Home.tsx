@@ -368,79 +368,77 @@ export default function Home() {
           >
             Open Positions
           </button>
-
-          <div className="mt-16 space-y-8 border-t border-white/20 pt-8">
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="https://www.facebook.com/warnerbros"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                data-testid="link-facebook"
-                aria-label="Facebook"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
-                  <Facebook className="h-6 w-6 text-white" />
-                </div>
-              </a>
-
-              <a
-                href="https://www.instagram.com/warnerbros"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                data-testid="link-instagram"
-                aria-label="Instagram"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
-                  <Instagram className="h-6 w-6 text-white" />
-                </div>
-              </a>
-
-              <a
-                href="https://www.youtube.com/user/WarnerBrosPictures"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                data-testid="link-youtube"
-                aria-label="YouTube"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
-                  <Youtube className="h-6 w-6 text-white" />
-                </div>
-              </a>
-
-              <a
-                href="https://twitter.com/warnerbros"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                data-testid="link-twitter"
-                aria-label="Twitter"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
-                  <Twitter className="h-6 w-6 text-white" />
-                </div>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/warner-bros--entertainment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-                data-testid="link-linkedin"
-                aria-label="LinkedIn"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
-                  <Linkedin className="h-6 w-6 text-white" />
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 py-4">
+      <div className="absolute bottom-0 left-0 right-0 z-20 pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
+          <a
+            href="https://www.facebook.com/warnerbros"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+            data-testid="link-facebook"
+            aria-label="Facebook"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+              <Facebook className="h-6 w-6 text-white" />
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/warnerbros"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+            data-testid="link-instagram"
+            aria-label="Instagram"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+              <Instagram className="h-6 w-6 text-white" />
+            </div>
+          </a>
+
+          <a
+            href="https://www.youtube.com/user/WarnerBrosPictures"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+            data-testid="link-youtube"
+            aria-label="YouTube"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+              <Youtube className="h-6 w-6 text-white" />
+            </div>
+          </a>
+
+          <a
+            href="https://twitter.com/warnerbros"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+            data-testid="link-twitter"
+            aria-label="Twitter"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+              <Twitter className="h-6 w-6 text-white" />
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/warner-bros--entertainment"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+            data-testid="link-linkedin"
+            aria-label="LinkedIn"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110">
+              <Linkedin className="h-6 w-6 text-white" />
+            </div>
+          </a>
+        </div>
+
         <p className="text-center text-sm text-white/60 md:text-base">
           © 2025 Warner Bros. Entertainment Inc. All rights reserved.
         </p>
