@@ -67,11 +67,11 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-black">
+    <div className="relative min-h-screen w-full overflow-y-auto bg-black">
       {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
           style={{ 
             backgroundImage: `url(${image})`,
             filter: 'blur(5px)',
@@ -84,7 +84,7 @@ export default function Home() {
       {overlayColors.map((color, index) => (
         <div
           key={index}
-          className={`absolute inset-0 ${color} transition-opacity duration-1000`}
+          className={`fixed inset-0 ${color} transition-opacity duration-1000`}
           style={{ opacity: currentImageIndex === index ? 1 : 0 }}
         />
       ))}
@@ -327,7 +327,7 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center pb-32 md:px-6">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center py-8 pb-40 md:px-6 md:pb-44">
         <div className="max-w-4xl space-y-8 md:space-y-10">
           <div className="space-y-4">
             <img
@@ -386,7 +386,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 pb-3 px-4">
+      <div className="fixed bottom-0 left-0 right-0 z-20 pb-3 px-4">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-3 md:gap-4 md:mb-4">
           <a
             href="https://www.facebook.com/warnerbros"
