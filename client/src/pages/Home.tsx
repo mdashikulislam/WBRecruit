@@ -326,8 +326,8 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <div className="max-w-4xl space-y-12">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center pb-32">
+        <div className="max-w-4xl space-y-10">
           <div className="space-y-4">
             <img
               src={logoImage}
@@ -361,7 +361,7 @@ export default function Home() {
             </AlertDialogContent>
           </AlertDialog>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-5">
             <h3 className="text-2xl font-semibold text-white md:text-3xl">
               Join Our Team at Warner Bros
             </h3>
@@ -381,7 +381,7 @@ export default function Home() {
           
           <button
             onClick={() => setShowPositionsDialog(true)}
-            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-12 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-14 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 shadow-xl"
             data-testid="button-open-positions"
           >
             Open Positions
