@@ -90,10 +90,10 @@ export default function Home() {
 
 
       <Dialog open={showPositionsDialog} onOpenChange={setShowPositionsDialog}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl bg-black/40 backdrop-blur-xl border-white/20">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Available Positions</DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogTitle className="text-2xl font-bold text-white">Available Positions</DialogTitle>
+            <DialogDescription className="text-base text-white/80">
               Explore career opportunities at Warner Bros Entertainment Inc.
             </DialogDescription>
           </DialogHeader>
