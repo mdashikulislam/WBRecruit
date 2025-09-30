@@ -90,7 +90,7 @@ export default function Home() {
 
 
       <Dialog open={showPositionsDialog} onOpenChange={setShowPositionsDialog}>
-        <DialogContent className="max-w-2xl bg-black/40 backdrop-blur-xl border-white/20">
+        <DialogContent className="max-w-2xl bg-black/50 backdrop-blur-2xl border-white/20">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-white">Available Positions</DialogTitle>
             <DialogDescription className="text-base text-white/80">
@@ -141,15 +141,15 @@ export default function Home() {
       </Dialog>
 
       <Dialog open={activeJobDialog === 'social-media-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl bg-black/50 backdrop-blur-2xl border-white/20">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Social Media Manager</DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogTitle className="text-2xl font-bold text-white">Social Media Manager</DialogTitle>
+            <DialogDescription className="text-base text-white/80">
               Warner Bros Entertainment Inc.
             </DialogDescription>
           </DialogHeader>
           <ScrollArea className="max-h-[60vh] pr-4">
-            <div className="space-y-6 text-sm leading-relaxed">
+            <div className="space-y-6 text-sm leading-relaxed text-white/90">
               <p>
                 Thank you for your interest in the Social Media Manager position at Warner Bros. This is an exciting opportunity to shape the brand's social presence and drive meaningful engagement across global markets.
               </p>
@@ -203,15 +203,15 @@ export default function Home() {
       </Dialog>
 
       <Dialog open={activeJobDialog === 'social-media-director'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl bg-black/50 backdrop-blur-2xl border-white/20">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Social Media Director</DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogTitle className="text-2xl font-bold text-white">Social Media Director</DialogTitle>
+            <DialogDescription className="text-base text-white/80">
               Warner Bros Entertainment Inc.
             </DialogDescription>
           </DialogHeader>
           <ScrollArea className="max-h-[60vh] pr-4">
-            <div className="space-y-6 text-sm leading-relaxed">
+            <div className="space-y-6 text-sm leading-relaxed text-white/90">
               <p>
                 We are seeking an exceptional Social Media Director to lead Warner Bros' global social media presence. This senior leadership role offers the opportunity to define strategy, drive innovation, and build world-class teams across international markets.
               </p>
@@ -265,15 +265,15 @@ export default function Home() {
       </Dialog>
 
       <Dialog open={activeJobDialog === 'digital-marketing-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl bg-black/50 backdrop-blur-2xl border-white/20">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Digital Marketing Manager</DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogTitle className="text-2xl font-bold text-white">Digital Marketing Manager</DialogTitle>
+            <DialogDescription className="text-base text-white/80">
               Warner Bros Entertainment Inc.
             </DialogDescription>
           </DialogHeader>
           <ScrollArea className="max-h-[60vh] pr-4">
-            <div className="space-y-6 text-sm leading-relaxed">
+            <div className="space-y-6 text-sm leading-relaxed text-white/90">
               <p>
                 Join Warner Bros as a Digital Marketing Manager and drive transformative digital campaigns that captivate global audiences. This role combines strategic thinking with hands-on execution to deliver exceptional marketing results.
               </p>
