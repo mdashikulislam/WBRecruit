@@ -82,36 +82,6 @@ export default function Home() {
         />
       ))}
 
-      <div className="absolute left-6 top-6 z-20 flex flex-col gap-3">
-        <button
-          onClick={() => setActiveJobDialog('social-media-manager')}
-          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-          data-testid="button-social-media-manager"
-        >
-          Social Media Manager
-        </button>
-        <button
-          onClick={() => setActiveJobDialog('social-media-director')}
-          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-          data-testid="button-social-media-director"
-        >
-          Social Media Director
-        </button>
-        <button
-          onClick={() => setActiveJobDialog('digital-marketing-manager')}
-          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-          data-testid="button-digital-marketing-manager"
-        >
-          Digital Marketing Manager
-        </button>
-        <button
-          onClick={() => setActiveJobDialog('content-strategy-lead')}
-          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-          data-testid="button-content-strategy-lead"
-        >
-          Content Strategy Lead
-        </button>
-      </div>
 
       <Dialog open={activeJobDialog === 'social-media-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
         <DialogContent className="max-w-3xl">
@@ -278,61 +248,6 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-      <Dialog open={activeJobDialog === 'content-strategy-lead'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
-        <DialogContent className="max-w-3xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Content Strategy Lead</DialogTitle>
-            <DialogDescription className="text-base">
-              Warner Bros Entertainment Inc.
-            </DialogDescription>
-          </DialogHeader>
-          <ScrollArea className="max-h-[60vh] pr-4">
-            <div className="space-y-6 text-sm leading-relaxed">
-              <p>
-                Warner Bros is looking for a visionary Content Strategy Lead to architect compelling content experiences that resonate with global audiences. This role sits at the intersection of storytelling, data, and brand strategy.
-              </p>
-
-              <div>
-                <h3 className="mb-3 text-lg font-semibold">Key Accountabilities</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <strong>Strategic Content Planning:</strong> Develop comprehensive content strategies that support brand objectives, audience growth, and engagement across all digital platforms.
-                  </li>
-                  <li>
-                    <strong>Editorial Leadership:</strong> Oversee content calendars, editorial processes, and creative development to ensure consistent, high-quality output that reflects Warner Bros' brand excellence.
-                  </li>
-                  <li>
-                    <strong>Audience Intelligence:</strong> Leverage consumer insights, cultural trends, and performance data to inform content decisions and maximize audience resonance.
-                  </li>
-                  <li>
-                    <strong>Creative Collaboration:</strong> Partner with writers, designers, video producers, and marketing teams to bring strategic content visions to life across formats and channels.
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <strong>Base Salary:</strong> $150,000 – $195,000 USD annually for remote roles, reflecting experience level and market considerations.
-                  </li>
-                  <li>
-                    <strong>Creative Incentives:</strong> Annual performance bonuses and recognition programs celebrating innovative content achievements.
-                  </li>
-                  <li>
-                    <strong>Flexible Excellence:</strong> Fully remote worldwide with collaborative tools, creative resources, and work-life integration support.
-                  </li>
-                </ul>
-              </div>
-
-              <p className="pt-4 font-medium">
-                Interested in shaping the future of content at Warner Bros? Book your consultation to explore this opportunity further.
-              </p>
-            </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
-      
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
           <div className="space-y-4">
@@ -368,12 +283,36 @@ export default function Home() {
             </AlertDialogContent>
           </AlertDialog>
           
-          <h1 
-            className="text-2xl font-semibold tracking-wide text-white drop-shadow-lg md:text-3xl lg:text-4xl"
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={() => setActiveJobDialog('social-media-manager')}
+              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+              data-testid="button-social-media-manager"
+            >
+              Social Media Manager
+            </button>
+            <button
+              onClick={() => setActiveJobDialog('social-media-director')}
+              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+              data-testid="button-social-media-director"
+            >
+              Social Media Director
+            </button>
+            <button
+              onClick={() => setActiveJobDialog('digital-marketing-manager')}
+              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+              data-testid="button-digital-marketing-manager"
+            >
+              Digital Marketing Manager
+            </button>
+          </div>
+          
+          <h2 
+            className="text-xl font-medium tracking-wide text-white/90 drop-shadow-lg md:text-2xl"
             data-testid="text-headline"
           >
             Schedule a Consultation with Our Recruiting Agent
-          </h1>
+          </h2>
           
           <button
             onClick={handleScheduleClick}
