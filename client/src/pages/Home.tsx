@@ -326,18 +326,18 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center pb-32">
-        <div className="max-w-4xl space-y-10">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center pb-32 md:px-6">
+        <div className="max-w-4xl space-y-8 md:space-y-10">
           <div className="space-y-4">
             <img
               src={logoImage}
               alt="Warner Bros Logo"
-              className="mx-auto w-64 cursor-pointer drop-shadow-2xl transition-transform hover:scale-105 md:w-80"
+              className="mx-auto w-48 cursor-pointer drop-shadow-2xl transition-transform hover:scale-105 md:w-64 lg:w-80"
               data-testid="img-logo"
               onClick={handleLogoClick}
             />
             <h2 
-              className="text-4xl font-bold tracking-wide text-white drop-shadow-lg md:text-5xl"
+              className="text-3xl font-bold tracking-wide text-white drop-shadow-lg md:text-4xl lg:text-5xl"
               data-testid="text-brand"
             >
               Warner Bros Hiring
@@ -363,34 +363,30 @@ export default function Home() {
 
           <button
             onClick={() => setShowPositionsDialog(true)}
-            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-14 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 shadow-xl"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 shadow-xl md:px-14 md:py-5 md:text-xl"
             data-testid="button-open-positions"
           >
             Open Positions
           </button>
 
-          <div className="max-w-3xl mx-auto space-y-5">
-            <h3 className="text-2xl font-semibold text-white md:text-3xl">
+          <div className="max-w-3xl mx-auto space-y-4 px-4">
+            <h3 className="text-xl font-semibold text-white md:text-2xl lg:text-3xl">
               Join Our Team at Warner Bros
             </h3>
             
-            <p className="text-lg text-white/90 leading-relaxed">
+            <p className="text-base text-white/90 leading-relaxed md:text-lg">
               We're looking for passionate, talented individuals to be part of our growing team. Explore our open positions and discover opportunities that match your skills and ambitions.
             </p>
             
-            <p className="text-base text-white/80 leading-relaxed">
+            <p className="text-sm text-white/80 leading-relaxed md:text-base">
               Click on a role to view the full job description and learn more about what we're looking for.
-            </p>
-            
-            <p className="text-base text-white/80 leading-relaxed">
-              Ready to take the next step? At the end of each listing, you'll have the option to schedule a call directly with our team via Calendly. We're excited to meet you.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 pb-4">
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
+      <div className="absolute bottom-0 left-0 right-0 z-20 pb-3 px-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-3 md:gap-4 md:mb-4">
           <a
             href="https://www.facebook.com/warnerbros"
             target="_blank"
@@ -457,7 +453,7 @@ export default function Home() {
           </a>
         </div>
 
-        <p className="text-center text-sm text-white/60 md:text-base">
+        <p className="text-center text-xs text-white/60 md:text-sm lg:text-base px-4">
           © 2025 Warner Bros. Entertainment Inc. All rights reserved.
         </p>
       </div>
