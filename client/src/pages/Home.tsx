@@ -5,7 +5,7 @@ import image3 from "@assets/3_1759181092856.jpg";
 import image4 from "@assets/4_1759181092856.jpg";
 import image5 from "@assets/5_1759181092856.jpg";
 import logoImage from "@assets/wb-logo.png";
-import { Facebook, Instagram, Twitter, Phone, Linkedin, Youtube, Calendar } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Calendar, Briefcase } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,6 +27,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [showWarnerDialog, setShowWarnerDialog] = useState(false);
+  const [showPositionsDialog, setShowPositionsDialog] = useState(false);
   const [activeJobDialog, setActiveJobDialog] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -49,6 +50,11 @@ export default function Home() {
 
   const handleScheduleClick = () => {
     window.open('https://calendly.live', '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOpenJob = (jobId: string) => {
+    setShowPositionsDialog(false);
+    setActiveJobDialog(jobId);
   };
 
   const handleLogoClick = () => {
@@ -82,6 +88,60 @@ export default function Home() {
         />
       ))}
 
+
+      <Dialog open={showPositionsDialog} onOpenChange={setShowPositionsDialog}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Available Positions</DialogTitle>
+            <DialogDescription className="text-base">
+              Explore career opportunities at Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-3 py-4">
+            <button
+              onClick={() => handleOpenJob('social-media-manager')}
+              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              data-testid="position-social-media-manager"
+            >
+              <div className="flex items-start gap-4">
+                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <div>
+                  <h3 className="text-lg font-semibold">Social Media Manager</h3>
+                  <p className="text-sm text-muted-foreground mt-1">$140,000 – $180,000 USD</p>
+                </div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => handleOpenJob('social-media-director')}
+              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              data-testid="position-social-media-director"
+            >
+              <div className="flex items-start gap-4">
+                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <div>
+                  <h3 className="text-lg font-semibold">Social Media Director</h3>
+                  <p className="text-sm text-muted-foreground mt-1">$220,000 – $280,000 USD</p>
+                </div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => handleOpenJob('digital-marketing-manager')}
+              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              data-testid="position-digital-marketing-manager"
+            >
+              <div className="flex items-start gap-4">
+                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <div>
+                  <h3 className="text-lg font-semibold">Digital Marketing Manager</h3>
+                  <p className="text-sm text-muted-foreground mt-1">$130,000 – $170,000 USD</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={activeJobDialog === 'social-media-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
         <DialogContent className="max-w-3xl">
@@ -130,9 +190,16 @@ export default function Home() {
                 </ul>
               </div>
 
-              <p className="pt-4 font-medium">
-                If you'd like to explore further, please select a time that works best for you using the Schedule button below.
-              </p>
+              <div className="pt-6 border-t">
+                <button
+                  onClick={handleScheduleClick}
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
+                  data-testid="button-schedule-job"
+                >
+                  <Calendar className="h-5 w-5" />
+                  Schedule with Calendly
+                </button>
+              </div>
             </div>
           </ScrollArea>
         </DialogContent>
@@ -185,9 +252,16 @@ export default function Home() {
                 </ul>
               </div>
 
-              <p className="pt-4 font-medium">
-                For confidential discussions about this executive opportunity, please schedule a consultation at your convenience.
-              </p>
+              <div className="pt-6 border-t">
+                <button
+                  onClick={handleScheduleClick}
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
+                  data-testid="button-schedule-job"
+                >
+                  <Calendar className="h-5 w-5" />
+                  Schedule with Calendly
+                </button>
+              </div>
             </div>
           </ScrollArea>
         </DialogContent>
@@ -240,9 +314,16 @@ export default function Home() {
                 </ul>
               </div>
 
-              <p className="pt-4 font-medium">
-                Ready to make an impact? Schedule your interview to discuss how you can contribute to Warner Bros' digital success.
-              </p>
+              <div className="pt-6 border-t">
+                <button
+                  onClick={handleScheduleClick}
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
+                  data-testid="button-schedule-job"
+                >
+                  <Calendar className="h-5 w-5" />
+                  Schedule with Calendly
+                </button>
+              </div>
             </div>
           </ScrollArea>
         </DialogContent>
@@ -283,44 +364,12 @@ export default function Home() {
             </AlertDialogContent>
           </AlertDialog>
           
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => setActiveJobDialog('social-media-manager')}
-              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-              data-testid="button-social-media-manager"
-            >
-              Social Media Manager
-            </button>
-            <button
-              onClick={() => setActiveJobDialog('social-media-director')}
-              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-              data-testid="button-social-media-director"
-            >
-              Social Media Director
-            </button>
-            <button
-              onClick={() => setActiveJobDialog('digital-marketing-manager')}
-              className="rounded-lg bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-              data-testid="button-digital-marketing-manager"
-            >
-              Digital Marketing Manager
-            </button>
-          </div>
-          
-          <h2 
-            className="text-xl font-medium tracking-wide text-white/90 drop-shadow-lg md:text-2xl"
-            data-testid="text-headline"
-          >
-            Schedule a Consultation with Our Recruiting Agent
-          </h2>
-          
           <button
-            onClick={handleScheduleClick}
-            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
-            data-testid="button-schedule"
+            onClick={() => setShowPositionsDialog(true)}
+            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-12 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+            data-testid="button-open-positions"
           >
-            <Calendar className="h-5 w-5" />
-            Schedule with Calendly
+            Open Positions
           </button>
 
           <div className="mt-16 space-y-8 border-t border-white/20 pt-8">
@@ -391,18 +440,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-white">
-              <Phone className="h-5 w-5" />
-              <a 
-                href="tel:+18189545000" 
-                className="text-base font-medium hover:text-cyan-300 transition-colors md:text-lg"
-                data-testid="link-phone"
-              >
-                +1 (818) 954-5000
-              </a>
-            </div>
-
-            <p className="text-xs text-white/60 md:text-sm">
+            <p className="text-sm text-white/60 md:text-base">
               © 2025 Warner Bros. Entertainment Inc. All rights reserved.
             </p>
           </div>
