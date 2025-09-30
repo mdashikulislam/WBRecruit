@@ -360,6 +360,24 @@ export default function Home() {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <h3 className="text-2xl font-semibold text-white md:text-3xl">
+              Join Our Team at Warner Bros
+            </h3>
+            
+            <p className="text-lg text-white/90 leading-relaxed">
+              We're looking for passionate, talented individuals to be part of our growing team. Explore our open positions and discover opportunities that match your skills and ambitions.
+            </p>
+            
+            <p className="text-base text-white/80 leading-relaxed">
+              Click on a role to view the full job description and learn more about what we're looking for.
+            </p>
+            
+            <p className="text-base text-white/80 leading-relaxed">
+              Ready to take the next step? At the end of each listing, you'll have the option to schedule a call directly with our team via Calendly. We're excited to meet you.
+            </p>
+          </div>
           
           <button
             onClick={() => setShowPositionsDialog(true)}
