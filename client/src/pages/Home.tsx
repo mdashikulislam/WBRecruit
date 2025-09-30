@@ -100,42 +100,39 @@ export default function Home() {
           <div className="space-y-3 py-4">
             <button
               onClick={() => handleOpenJob('social-media-manager')}
-              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              className="w-full rounded-lg bg-white/10 backdrop-blur-md p-6 text-left transition-all hover:bg-white/20 hover:scale-[1.02]"
               data-testid="position-social-media-manager"
             >
               <div className="flex items-start gap-4">
-                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <Briefcase className="h-6 w-6 mt-1 text-white" />
                 <div>
-                  <h3 className="text-lg font-semibold">Social Media Manager</h3>
-                  <p className="text-sm text-muted-foreground mt-1">$140,000 – $180,000 USD</p>
+                  <h3 className="text-lg font-semibold text-white">Social Media Manager</h3>
                 </div>
               </div>
             </button>
 
             <button
               onClick={() => handleOpenJob('social-media-director')}
-              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              className="w-full rounded-lg bg-white/10 backdrop-blur-md p-6 text-left transition-all hover:bg-white/20 hover:scale-[1.02]"
               data-testid="position-social-media-director"
             >
               <div className="flex items-start gap-4">
-                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <Briefcase className="h-6 w-6 mt-1 text-white" />
                 <div>
-                  <h3 className="text-lg font-semibold">Social Media Director</h3>
-                  <p className="text-sm text-muted-foreground mt-1">$220,000 – $280,000 USD</p>
+                  <h3 className="text-lg font-semibold text-white">Social Media Director</h3>
                 </div>
               </div>
             </button>
 
             <button
               onClick={() => handleOpenJob('digital-marketing-manager')}
-              className="w-full rounded-lg border border-border bg-card p-6 text-left transition-all hover:bg-accent hover:scale-[1.02]"
+              className="w-full rounded-lg bg-white/10 backdrop-blur-md p-6 text-left transition-all hover:bg-white/20 hover:scale-[1.02]"
               data-testid="position-digital-marketing-manager"
             >
               <div className="flex items-start gap-4">
-                <Briefcase className="h-6 w-6 mt-1 text-primary" />
+                <Briefcase className="h-6 w-6 mt-1 text-white" />
                 <div>
-                  <h3 className="text-lg font-semibold">Digital Marketing Manager</h3>
-                  <p className="text-sm text-muted-foreground mt-1">$130,000 – $170,000 USD</p>
+                  <h3 className="text-lg font-semibold text-white">Digital Marketing Manager</h3>
                 </div>
               </div>
             </button>
