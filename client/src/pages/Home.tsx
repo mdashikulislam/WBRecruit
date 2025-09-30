@@ -27,7 +27,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [showWarnerDialog, setShowWarnerDialog] = useState(false);
-  const [showJobDescription, setShowJobDescription] = useState(false);
+  const [activeJobDialog, setActiveJobDialog] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const backgroundImages = [image1, image2, image3, image4, image5];
@@ -82,18 +82,41 @@ export default function Home() {
         />
       ))}
 
-      <button
-        onClick={() => setShowJobDescription(true)}
-        className="absolute left-6 top-6 z-20 rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-        data-testid="button-job-description"
-      >
-        Job Description
-      </button>
+      <div className="absolute left-6 top-6 z-20 flex flex-col gap-3">
+        <button
+          onClick={() => setActiveJobDialog('social-media-manager')}
+          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+          data-testid="button-social-media-manager"
+        >
+          Social Media Manager
+        </button>
+        <button
+          onClick={() => setActiveJobDialog('social-media-director')}
+          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+          data-testid="button-social-media-director"
+        >
+          Social Media Director
+        </button>
+        <button
+          onClick={() => setActiveJobDialog('digital-marketing-manager')}
+          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+          data-testid="button-digital-marketing-manager"
+        >
+          Digital Marketing Manager
+        </button>
+        <button
+          onClick={() => setActiveJobDialog('content-strategy-lead')}
+          className="rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+          data-testid="button-content-strategy-lead"
+        >
+          Content Strategy Lead
+        </button>
+      </div>
 
-      <Dialog open={showJobDescription} onOpenChange={setShowJobDescription}>
+      <Dialog open={activeJobDialog === 'social-media-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
         <DialogContent className="max-w-3xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Social Media Manager Position</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">Social Media Manager</DialogTitle>
             <DialogDescription className="text-base">
               Warner Bros Entertainment Inc.
             </DialogDescription>
@@ -101,14 +124,14 @@ export default function Home() {
           <ScrollArea className="max-h-[60vh] pr-4">
             <div className="space-y-6 text-sm leading-relaxed">
               <p>
-                Thank you for your interest in the Social Media Manager position at Amazon. This is an exciting opportunity to shape the brand's social presence and drive meaningful engagement across global markets.
+                Thank you for your interest in the Social Media Manager position at Warner Bros. This is an exciting opportunity to shape the brand's social presence and drive meaningful engagement across global markets.
               </p>
 
               <div>
                 <h3 className="mb-3 text-lg font-semibold">Role Highlights</h3>
                 <ul className="space-y-3">
                   <li>
-                    <strong>Global Social Strategy:</strong> Develop and implement innovative strategies to grow Amazon's voice and engagement across diverse international audiences.
+                    <strong>Global Social Strategy:</strong> Develop and implement innovative strategies to grow Warner Bros' voice and engagement across diverse international audiences.
                   </li>
                   <li>
                     <strong>Content & Creative Direction:</strong> Lead content planning and oversee creative execution across major platforms, ensuring cultural relevance and brand consistency.
@@ -117,7 +140,7 @@ export default function Home() {
                     <strong>Analytics & Growth:</strong> Leverage insights and data to optimize campaigns, maximize ROI, and scale initiatives that deliver measurable impact.
                   </li>
                   <li>
-                    <strong>Cross-Functional Collaboration:</strong> Partner with world-class marketing, creative, product, and regional teams to ensure alignment with Amazon's broader business goals.
+                    <strong>Cross-Functional Collaboration:</strong> Partner with world-class marketing, creative, product, and regional teams to ensure alignment with Warner Bros' broader business goals.
                   </li>
                 </ul>
               </div>
@@ -126,7 +149,7 @@ export default function Home() {
                 <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
                 <ul className="space-y-3">
                   <li>
-                    <strong>Base Salary:</strong> Typically in the range of $170,000 – $210,000 USD annually for remote roles, with adjustments for experience and global location.
+                    <strong>Base Salary:</strong> $140,000 – $180,000 USD annually for remote roles, with adjustments for experience and global location.
                   </li>
                   <li>
                     <strong>Bonus & Incentives:</strong> Eligible for performance-based bonuses and additional compensation programs.
@@ -139,6 +162,171 @@ export default function Home() {
 
               <p className="pt-4 font-medium">
                 If you'd like to explore further, please select a time that works best for you using the Schedule button below.
+              </p>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={activeJobDialog === 'social-media-director'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Social Media Director</DialogTitle>
+            <DialogDescription className="text-base">
+              Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] pr-4">
+            <div className="space-y-6 text-sm leading-relaxed">
+              <p>
+                We are seeking an exceptional Social Media Director to lead Warner Bros' global social media presence. This senior leadership role offers the opportunity to define strategy, drive innovation, and build world-class teams across international markets.
+              </p>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Strategic Responsibilities</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Executive Leadership:</strong> Define and execute comprehensive social media strategies that align with Warner Bros' global business objectives and brand vision.
+                  </li>
+                  <li>
+                    <strong>Team Development:</strong> Build, mentor, and lead high-performing social media teams across multiple regions, fostering innovation and excellence.
+                  </li>
+                  <li>
+                    <strong>Platform Innovation:</strong> Pioneer emerging platform strategies, leverage cutting-edge technologies, and establish Warner Bros as an industry leader in digital engagement.
+                  </li>
+                  <li>
+                    <strong>Stakeholder Management:</strong> Collaborate with C-suite executives, creative leadership, and global business units to drive integrated marketing initiatives at scale.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Base Salary:</strong> $220,000 – $280,000 USD annually for remote roles, commensurate with experience and market positioning.
+                  </li>
+                  <li>
+                    <strong>Executive Benefits:</strong> Comprehensive bonus structure, equity opportunities, and executive compensation packages.
+                  </li>
+                  <li>
+                    <strong>Leadership Perks:</strong> Global remote flexibility, professional development budget, and access to industry-leading resources and networks.
+                  </li>
+                </ul>
+              </div>
+
+              <p className="pt-4 font-medium">
+                For confidential discussions about this executive opportunity, please schedule a consultation at your convenience.
+              </p>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={activeJobDialog === 'digital-marketing-manager'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Digital Marketing Manager</DialogTitle>
+            <DialogDescription className="text-base">
+              Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] pr-4">
+            <div className="space-y-6 text-sm leading-relaxed">
+              <p>
+                Join Warner Bros as a Digital Marketing Manager and drive transformative digital campaigns that captivate global audiences. This role combines strategic thinking with hands-on execution to deliver exceptional marketing results.
+              </p>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Core Responsibilities</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Campaign Management:</strong> Design and execute integrated digital marketing campaigns across multiple channels, optimizing for performance and brand impact.
+                  </li>
+                  <li>
+                    <strong>Performance Marketing:</strong> Drive measurable results through data-driven strategies, including SEM, programmatic advertising, email marketing, and conversion optimization.
+                  </li>
+                  <li>
+                    <strong>Analytics & Insights:</strong> Utilize advanced analytics tools to track campaign performance, derive actionable insights, and continuously improve marketing effectiveness.
+                  </li>
+                  <li>
+                    <strong>Cross-Channel Integration:</strong> Collaborate with content, creative, and product teams to ensure seamless brand experiences across all digital touchpoints.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Base Salary:</strong> $130,000 – $170,000 USD annually for remote positions, adjusted for expertise and geographic market.
+                  </li>
+                  <li>
+                    <strong>Performance Incentives:</strong> Quarterly bonus opportunities tied to campaign performance and business impact metrics.
+                  </li>
+                  <li>
+                    <strong>Professional Growth:</strong> Remote-first culture with comprehensive benefits, learning opportunities, and clear advancement pathways.
+                  </li>
+                </ul>
+              </div>
+
+              <p className="pt-4 font-medium">
+                Ready to make an impact? Schedule your interview to discuss how you can contribute to Warner Bros' digital success.
+              </p>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={activeJobDialog === 'content-strategy-lead'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Content Strategy Lead</DialogTitle>
+            <DialogDescription className="text-base">
+              Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] pr-4">
+            <div className="space-y-6 text-sm leading-relaxed">
+              <p>
+                Warner Bros is looking for a visionary Content Strategy Lead to architect compelling content experiences that resonate with global audiences. This role sits at the intersection of storytelling, data, and brand strategy.
+              </p>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Key Accountabilities</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Strategic Content Planning:</strong> Develop comprehensive content strategies that support brand objectives, audience growth, and engagement across all digital platforms.
+                  </li>
+                  <li>
+                    <strong>Editorial Leadership:</strong> Oversee content calendars, editorial processes, and creative development to ensure consistent, high-quality output that reflects Warner Bros' brand excellence.
+                  </li>
+                  <li>
+                    <strong>Audience Intelligence:</strong> Leverage consumer insights, cultural trends, and performance data to inform content decisions and maximize audience resonance.
+                  </li>
+                  <li>
+                    <strong>Creative Collaboration:</strong> Partner with writers, designers, video producers, and marketing teams to bring strategic content visions to life across formats and channels.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Base Salary:</strong> $150,000 – $195,000 USD annually for remote roles, reflecting experience level and market considerations.
+                  </li>
+                  <li>
+                    <strong>Creative Incentives:</strong> Annual performance bonuses and recognition programs celebrating innovative content achievements.
+                  </li>
+                  <li>
+                    <strong>Flexible Excellence:</strong> Fully remote worldwide with collaborative tools, creative resources, and work-life integration support.
+                  </li>
+                </ul>
+              </div>
+
+              <p className="pt-4 font-medium">
+                Interested in shaping the future of content at Warner Bros? Book your consultation to explore this opportunity further.
               </p>
             </div>
           </ScrollArea>
