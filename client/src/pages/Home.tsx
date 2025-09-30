@@ -67,7 +67,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-full w-full overflow-hidden bg-black">
       {backgroundImages.map((image, index) => (
         <div
           key={index}
@@ -75,7 +75,8 @@ export default function Home() {
           style={{ 
             backgroundImage: `url(${image})`,
             filter: 'blur(5px)',
-            opacity: currentImageIndex === index ? 1 : 0
+            opacity: currentImageIndex === index ? 1 : 0,
+            transform: 'scale(1.1)'
           }}
         />
       ))}
