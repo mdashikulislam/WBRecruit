@@ -436,12 +436,14 @@ export default function Home() {
                 </div>
               </a>
             </div>
-
-            <p className="text-sm text-white/60 md:text-base">
-              © 2025 Warner Bros. Entertainment Inc. All rights reserved.
-            </p>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-20 py-4">
+        <p className="text-center text-sm text-white/60 md:text-base">
+          © 2025 Warner Bros. Entertainment Inc. All rights reserved.
+        </p>
       </div>
     </div>
   );
