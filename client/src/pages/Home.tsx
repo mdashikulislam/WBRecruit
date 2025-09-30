@@ -16,9 +16,18 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [showWarnerDialog, setShowWarnerDialog] = useState(false);
+  const [showJobDescription, setShowJobDescription] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const backgroundImages = [image1, image2, image3, image4, image5];
@@ -72,6 +81,69 @@ export default function Home() {
           style={{ opacity: currentImageIndex === index ? 1 : 0 }}
         />
       ))}
+
+      <button
+        onClick={() => setShowJobDescription(true)}
+        className="absolute left-6 top-6 z-20 rounded-lg bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+        data-testid="button-job-description"
+      >
+        Job Description
+      </button>
+
+      <Dialog open={showJobDescription} onOpenChange={setShowJobDescription}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Social Media Manager Position</DialogTitle>
+            <DialogDescription className="text-base">
+              Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] pr-4">
+            <div className="space-y-6 text-sm leading-relaxed">
+              <p>
+                Thank you for your interest in the Social Media Manager position at Amazon. This is an exciting opportunity to shape the brand's social presence and drive meaningful engagement across global markets.
+              </p>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Role Highlights</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Global Social Strategy:</strong> Develop and implement innovative strategies to grow Amazon's voice and engagement across diverse international audiences.
+                  </li>
+                  <li>
+                    <strong>Content & Creative Direction:</strong> Lead content planning and oversee creative execution across major platforms, ensuring cultural relevance and brand consistency.
+                  </li>
+                  <li>
+                    <strong>Analytics & Growth:</strong> Leverage insights and data to optimize campaigns, maximize ROI, and scale initiatives that deliver measurable impact.
+                  </li>
+                  <li>
+                    <strong>Cross-Functional Collaboration:</strong> Partner with world-class marketing, creative, product, and regional teams to ensure alignment with Amazon's broader business goals.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Base Salary:</strong> Typically in the range of $170,000 – $210,000 USD annually for remote roles, with adjustments for experience and global location.
+                  </li>
+                  <li>
+                    <strong>Bonus & Incentives:</strong> Eligible for performance-based bonuses and additional compensation programs.
+                  </li>
+                  <li>
+                    <strong>Global Flexibility:</strong> Fully remote worldwide, with strong support for collaboration, professional growth, and work-life balance.
+                  </li>
+                </ul>
+              </div>
+
+              <p className="pt-4 font-medium">
+                If you'd like to explore further, please select a time that works best for you using the Schedule button below.
+              </p>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
       
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl space-y-12">
