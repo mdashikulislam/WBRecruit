@@ -361,6 +361,14 @@ export default function Home() {
             </AlertDialogContent>
           </AlertDialog>
 
+          <button
+            onClick={() => setShowPositionsDialog(true)}
+            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-14 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 shadow-xl"
+            data-testid="button-open-positions"
+          >
+            Open Positions
+          </button>
+
           <div className="max-w-3xl mx-auto space-y-5">
             <h3 className="text-2xl font-semibold text-white md:text-3xl">
               Join Our Team at Warner Bros
@@ -378,14 +386,6 @@ export default function Home() {
               Ready to take the next step? At the end of each listing, you'll have the option to schedule a call directly with our team via Calendly. We're excited to meet you.
             </p>
           </div>
-          
-          <button
-            onClick={() => setShowPositionsDialog(true)}
-            className="inline-flex items-center justify-center gap-3 rounded-lg bg-white/10 px-14 py-5 text-xl font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 shadow-xl"
-            data-testid="button-open-positions"
-          >
-            Open Positions
-          </button>
         </div>
       </div>
 
