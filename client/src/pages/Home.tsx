@@ -137,6 +137,19 @@ export default function Home() {
                 </div>
               </div>
             </button>
+
+            <button
+              onClick={() => handleOpenJob('digital-marketing-director')}
+              className="w-full rounded-lg bg-white/10 backdrop-blur-md p-6 text-left transition-all hover:bg-white/20 hover:scale-[1.02]"
+              data-testid="position-digital-marketing-director"
+            >
+              <div className="flex items-start gap-4">
+                <Briefcase className="h-6 w-6 mt-1 text-white" />
+                <div>
+                  <h3 className="text-lg font-semibold text-white">Digital Marketing Director</h3>
+                </div>
+              </div>
+            </button>
           </div>
         </DialogContent>
       </Dialog>
@@ -308,6 +321,74 @@ export default function Home() {
                   </li>
                   <li>
                     <strong>Professional Growth:</strong> Remote-first culture with comprehensive benefits, learning opportunities, and clear advancement pathways.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-6 border-t">
+                <button
+                  onClick={handleScheduleClick}
+                  className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#006BFF] px-10 py-4 text-lg font-semibold text-white shadow-2xl transition-all hover:bg-[#0058D6] hover:shadow-[0_8px_30px_rgb(0,107,255,0.4)] active:scale-95"
+                  data-testid="button-schedule-job"
+                >
+                  <Calendar className="h-5 w-5" />
+                  Schedule with Calendly
+                </button>
+              </div>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={activeJobDialog === 'digital-marketing-director'} onOpenChange={(open) => !open && setActiveJobDialog(null)}>
+        <DialogContent className="max-w-3xl bg-black/50 backdrop-blur-2xl border-white/20">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-white">Digital Marketing Director</DialogTitle>
+            <DialogDescription className="text-base text-white/80">
+              Warner Bros Entertainment Inc.
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] pr-4">
+            <div className="space-y-6 text-sm leading-relaxed text-white/90">
+              <p>
+                Join Warner Bros as a Digital Marketing Director and lead transformative digital strategies that engage and inspire global audiences. In this senior leadership role, you'll shape the vision, oversee execution, and drive innovation across all digital channels to deliver extraordinary marketing outcomes.
+              </p>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Core Responsibilities</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Strategic Leadership:</strong> Define and oversee the global digital marketing strategy, aligning campaigns with Warner Bros' brand and business objectives.
+                  </li>
+                  <li>
+                    <strong>Campaign Oversight:</strong> Lead the planning and execution of large-scale, integrated digital campaigns across multiple platforms, ensuring consistency and maximum impact.
+                  </li>
+                  <li>
+                    <strong>Performance & Growth:</strong> Direct performance marketing initiatives (SEM, programmatic, email, paid social, and CRO), leveraging data to deliver measurable business growth.
+                  </li>
+                  <li>
+                    <strong>Data & Insights:</strong> Champion a data-driven culture by utilizing advanced analytics, reporting, and consumer insights to inform strategic decisions and optimize performance.
+                  </li>
+                  <li>
+                    <strong>Cross-Functional Collaboration:</strong> Partner with content, creative, and product teams to ensure brand storytelling is consistent, impactful, and resonates across all digital touchpoints.
+                  </li>
+                  <li>
+                    <strong>Team Development:</strong> Mentor and lead a high-performing digital marketing team, fostering innovation, professional growth, and operational excellence.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-lg font-semibold">Compensation & Benefits</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Base Salary:</strong> $210,000 – $270,000 USD annually for remote positions, adjusted for expertise and geographic market.
+                  </li>
+                  <li>
+                    <strong>Performance Incentives:</strong> Executive bonus structure tied to global campaign performance, business outcomes, and innovation benchmarks.
+                  </li>
+                  <li>
+                    <strong>Professional Growth:</strong> Remote-first culture with full benefits, executive-level development programs, and clear pathways for advancement within Warner Bros. Discovery.
                   </li>
                 </ul>
               </div>
