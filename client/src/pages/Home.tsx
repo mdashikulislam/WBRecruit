@@ -49,7 +49,7 @@ export default function Home() {
   }, [backgroundImages.length]);
 
   const handleScheduleClick = () => {
-    window.open('https://calendly.live', '_blank', 'noopener,noreferrer');
+    window.open('https://calendly.wbdhiring.com', '_blank', 'noopener,noreferrer');
   };
 
   const handleOpenJob = (jobId: string) => {
